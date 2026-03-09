@@ -1,0 +1,9 @@
+{
+  "name": "xer-public-sites",
+  "private": true,
+  "workspaces": [
+    "landing",
+    "versions",
+    "docs"
+  ]
+}
