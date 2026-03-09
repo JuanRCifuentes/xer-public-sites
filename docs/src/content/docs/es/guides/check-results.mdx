@@ -1,0 +1,128 @@
+---
+title: Revisar Resultados
+description: Aprende a revisar y analizar los resultados de tu proyecto en XER.
+---
+
+import { Card, CardGrid, Steps, Aside, Tabs, TabItem } from '@astrojs/starlight/components';
+
+Esta guía explica cómo revisar y analizar los resultados generados después de procesar tus archivos en XER.
+
+## Resumen de resultados
+
+Después de que tus archivos son subidos y procesados, XER genera un conjunto de resultados que incluyen:
+
+- **Análisis de Cronograma** — Revisión del cronograma del proyecto con métricas clave
+- **Verificación de Calidad de Datos** — Validación de la integridad y completitud de los datos
+- **Advertencias y Errores** — Problemas encontrados durante el procesamiento
+- **Panel de Resumen** — Vista general visual de los datos de tu proyecto
+
+{/* TODO: Actualizar con los tipos de resultados reales del producto */}
+
+## Cómo revisar resultados
+
+<Steps>
+
+1. **Abre tu proyecto**
+
+   Navega a **Proyectos** y selecciona el proyecto que deseas revisar.
+
+   {/* TODO: Agregar captura de pantalla */}
+
+2. **Ve a la pestaña de Resultados**
+
+   Haz clic en la pestaña **"Resultados"** en la barra de navegación del proyecto. Si tus archivos aún están siendo procesados, verás un indicador de progreso.
+
+   {/* TODO: Agregar captura de pantalla de la pestaña Resultados */}
+
+3. **Revisa el panel de resumen**
+
+   El panel proporciona una vista general de alto nivel de los resultados:
+
+   {/* TODO: Agregar captura de pantalla del panel de resumen */}
+
+   Las métricas clave mostradas incluyen:
+
+   | Métrica                   | Descripción                                        |
+   |---------------------------|----------------------------------------------------|
+   | Total de Actividades      | Número de actividades encontradas en el archivo     |
+   | Longitud de Ruta Crítica  | Duración de la ruta crítica                         |
+   | Puntuación de Calidad     | Calificación general de calidad de los datos        |
+   | Advertencias              | Número de advertencias encontradas                  |
+   | Errores                   | Número de errores que necesitan atención            |
+
+   {/* TODO: Actualizar métricas con datos reales del producto */}
+
+4. **Explora resultados detallados**
+
+   Haz clic en cualquier sección del panel para profundizar en los resultados detallados.
+
+   {/* TODO: Agregar captura de pantalla de la vista detallada */}
+
+</Steps>
+
+## Entender los estados de resultados
+
+Cada archivo procesado tendrá uno de los siguientes estados:
+
+<Tabs>
+  <TabItem label="Exitoso">
+    El archivo fue procesado sin errores. Todos los resultados están disponibles para su revisión.
+
+    {/* TODO: Agregar captura de pantalla del estado exitoso */}
+  </TabItem>
+  <TabItem label="Advertencia">
+    El archivo fue procesado, pero se encontraron algunas advertencias. Revisa la sección de advertencias para más detalles.
+
+    {/* TODO: Agregar captura de pantalla del estado de advertencia */}
+  </TabItem>
+  <TabItem label="Error">
+    El archivo no pudo ser procesado completamente debido a errores. Revisa la sección de errores para pasos de resolución.
+
+    {/* TODO: Agregar captura de pantalla del estado de error */}
+  </TabItem>
+</Tabs>
+
+## Filtrar y ordenar resultados
+
+Puedes filtrar y ordenar resultados para encontrar información específica:
+
+- **Filtrar por estado** — Mostrar solo elementos con advertencias o errores
+- **Filtrar por fecha** — Acotar resultados a un rango de tiempo específico
+- **Ordenar por métrica** — Ordenar resultados por cualquier encabezado de columna
+- **Buscar** — Usar la barra de búsqueda para encontrar actividades o elementos específicos
+
+{/* TODO: Agregar captura de pantalla de los controles de filtro y ordenamiento */}
+
+<Aside type="tip">
+  Usa el botón **"Exportar"** para descargar tus resultados como archivo PDF o Excel para revisión offline o para compartir.
+</Aside>
+
+## Comparar resultados
+
+Si has subido múltiples versiones de un archivo, puedes comparar resultados:
+
+<Steps>
+
+1. Ve a la pestaña **"Resultados"**
+2. Haz clic en **"Comparar"**
+3. Selecciona las dos versiones que deseas comparar
+4. Revisa las diferencias resaltadas en la vista de comparación
+
+</Steps>
+
+{/* TODO: Agregar captura de pantalla de la vista de comparación */}
+
+<Aside type="note">
+  La función de comparación está disponible para proyectos con dos o más versiones de archivos subidos.
+</Aside>
+
+## ¿Qué sigue?
+
+<CardGrid>
+  <Card title="Descargar Archivos" icon="down-caret">
+    [Descarga tus resultados](/es/guides/download-files/) como reportes o exportaciones de datos.
+  </Card>
+  <Card title="Subir Archivos" icon="document">
+    ¿Necesitas subir una nueva versión? Mira [cómo subir archivos](/es/guides/upload-files/).
+  </Card>
+</CardGrid>

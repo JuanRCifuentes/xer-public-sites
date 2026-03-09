@@ -1,0 +1,129 @@
+---
+title: Descargar Archivos
+description: Aprende a descargar archivos y reportes desde tu proyecto en XER.
+---
+
+import { Card, CardGrid, Steps, Aside, Tabs, TabItem } from '@astrojs/starlight/components';
+
+Esta guía explica cómo descargar archivos y reportes generados desde tu proyecto en XER.
+
+## Descargas disponibles
+
+Después del procesamiento, XER genera diferentes tipos de contenido descargable:
+
+| Tipo de Descarga    | Formato          | Descripción                                    |
+|---------------------|------------------|------------------------------------------------|
+| Archivo Original    | `.xer/.xml/.mpp` | El archivo original que subiste                |
+| Reporte Procesado   | `.pdf`           | Reporte de análisis generado                   |
+| Exportación de Datos| `.xlsx`          | Hoja de cálculo con datos extraídos            |
+| Resumen             | `.pdf`           | Resumen general del proyecto                   |
+
+{/* TODO: Actualizar tipos de descarga con datos reales del producto */}
+
+## Cómo descargar archivos
+
+<Tabs>
+  <TabItem label="Archivo Individual">
+    <Steps>
+
+    1. **Abre tu proyecto**
+
+       Navega a **Proyectos** y selecciona el proyecto que contiene los archivos que deseas descargar.
+
+       {/* TODO: Agregar captura de pantalla */}
+
+    2. **Ve a la sección de Archivos**
+
+       Haz clic en la pestaña **"Archivos"** para ver todos los archivos disponibles.
+
+       {/* TODO: Agregar captura de pantalla */}
+
+    3. **Encuentra tu archivo**
+
+       Localiza el archivo que deseas descargar en la lista de archivos. Puedes usar la barra de búsqueda o los filtros para acotar los resultados.
+
+       {/* TODO: Agregar captura de pantalla de la lista de archivos con búsqueda/filtro */}
+
+    4. **Haz clic en "Descargar"**
+
+       Haz clic en el **icono de descarga** junto al archivo, o haz clic derecho y selecciona **"Descargar"** del menú contextual.
+
+       {/* TODO: Agregar captura de pantalla de la acción de descarga */}
+
+    5. **Elige el formato** (si aplica)
+
+       Si hay múltiples formatos disponibles, selecciona el formato deseado del desplegable.
+
+       {/* TODO: Agregar captura de pantalla de la selección de formato */}
+
+    </Steps>
+  </TabItem>
+  <TabItem label="Descarga Masiva">
+    <Steps>
+
+    1. **Abre tu proyecto**
+
+       Navega a **Proyectos** y selecciona el proyecto deseado.
+
+    2. **Ve a la sección de Archivos**
+
+       Haz clic en la pestaña **"Archivos"**.
+
+    3. **Selecciona múltiples archivos**
+
+       Usa las casillas de verificación para seleccionar los archivos que deseas descargar. También puedes hacer clic en **"Seleccionar Todo"** para seleccionar todos los archivos.
+
+       {/* TODO: Agregar captura de pantalla de selección múltiple */}
+
+    4. **Haz clic en "Descargar Seleccionados"**
+
+       Haz clic en el botón **"Descargar Seleccionados"** en la barra de acciones que aparece en la parte superior. Los archivos se empaquetarán en un archivo `.zip`.
+
+       {/* TODO: Agregar captura de pantalla de la barra de acciones de descarga masiva */}
+
+    </Steps>
+  </TabItem>
+</Tabs>
+
+<Aside type="note">
+  Los archivos descargados se guardan en la carpeta de descargas predeterminada de tu navegador.
+</Aside>
+
+## Descargar reportes
+
+<Steps>
+
+1. **Ve a la sección de Resultados**
+
+   Dentro de tu proyecto, navega a la pestaña **"Resultados"**.
+
+   {/* TODO: Agregar captura de pantalla */}
+
+2. **Selecciona un reporte**
+
+   Elige el reporte que deseas descargar de la lista de reportes disponibles.
+
+   {/* TODO: Agregar captura de pantalla */}
+
+3. **Haz clic en "Exportar" o "Descargar"**
+
+   Haz clic en el botón de exportar/descargar y elige el formato deseado (PDF, Excel, etc.).
+
+   {/* TODO: Agregar captura de pantalla */}
+
+</Steps>
+
+<Aside type="tip">
+  Los reportes también se pueden compartir directamente por correo electrónico desde la página de Resultados. Busca el botón **"Compartir"** junto a cada reporte.
+</Aside>
+
+## ¿Qué sigue?
+
+<CardGrid>
+  <Card title="Crear un Proyecto" icon="rocket">
+    ¿Necesitas un nuevo proyecto? Aprende a [crear un proyecto](/es/guides/create-project/).
+  </Card>
+  <Card title="Revisar Resultados" icon="approve-check">
+    Revisa tus datos en la [sección de resultados](/es/guides/check-results/).
+  </Card>
+</CardGrid>

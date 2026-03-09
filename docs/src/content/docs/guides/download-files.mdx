@@ -1,0 +1,129 @@
+---
+title: Download Files
+description: Learn how to download files and reports from your XER project.
+---
+
+import { Card, CardGrid, Steps, Aside, Tabs, TabItem } from '@astrojs/starlight/components';
+
+This guide explains how to download files and generated reports from your XER project.
+
+## Available downloads
+
+After processing, XER generates different types of downloadable content:
+
+| Download Type     | Format     | Description                                        |
+|-------------------|------------|----------------------------------------------------|
+| Original File     | `.xer/.xml/.mpp` | The original file you uploaded                |
+| Processed Report  | `.pdf`     | Generated analysis report                          |
+| Data Export       | `.xlsx`    | Spreadsheet with extracted data                    |
+| Summary           | `.pdf`     | High-level project summary                         |
+
+{/* TODO: Update download types with actual product data */}
+
+## How to download files
+
+<Tabs>
+  <TabItem label="Single File">
+    <Steps>
+
+    1. **Open your project**
+
+       Navigate to **Projects** and select the project that contains the files you want to download.
+
+       {/* TODO: Add screenshot */}
+
+    2. **Go to the Files section**
+
+       Click on the **"Files"** tab to see all available files.
+
+       {/* TODO: Add screenshot */}
+
+    3. **Find your file**
+
+       Locate the file you want to download in the file list. You can use the search bar or filters to narrow down results.
+
+       {/* TODO: Add screenshot of file list with search/filter */}
+
+    4. **Click "Download"**
+
+       Click the **download icon** next to the file, or right-click and select **"Download"** from the context menu.
+
+       {/* TODO: Add screenshot of download action */}
+
+    5. **Choose the format** (if applicable)
+
+       If multiple formats are available, select the desired format from the dropdown.
+
+       {/* TODO: Add screenshot of format selection */}
+
+    </Steps>
+  </TabItem>
+  <TabItem label="Bulk Download">
+    <Steps>
+
+    1. **Open your project**
+
+       Navigate to **Projects** and select the target project.
+
+    2. **Go to the Files section**
+
+       Click on the **"Files"** tab.
+
+    3. **Select multiple files**
+
+       Use the checkboxes to select the files you want to download. You can also click **"Select All"** to select every file.
+
+       {/* TODO: Add screenshot of multi-select */}
+
+    4. **Click "Download Selected"**
+
+       Click the **"Download Selected"** button in the action bar that appears at the top. The files will be bundled into a `.zip` archive.
+
+       {/* TODO: Add screenshot of bulk download action bar */}
+
+    </Steps>
+  </TabItem>
+</Tabs>
+
+<Aside type="note">
+  Downloaded files are saved to your browser's default download folder.
+</Aside>
+
+## Downloading reports
+
+<Steps>
+
+1. **Go to the Results section**
+
+   Inside your project, navigate to the **"Results"** tab.
+
+   {/* TODO: Add screenshot */}
+
+2. **Select a report**
+
+   Choose the report you want to download from the available reports list.
+
+   {/* TODO: Add screenshot */}
+
+3. **Click "Export" or "Download"**
+
+   Click the export/download button and choose the desired format (PDF, Excel, etc.).
+
+   {/* TODO: Add screenshot */}
+
+</Steps>
+
+<Aside type="tip">
+  Reports can also be shared directly via email from the Results page. Look for the **"Share"** button next to each report.
+</Aside>
+
+## What's next?
+
+<CardGrid>
+  <Card title="Create a Project" icon="rocket">
+    Need a new project? Learn how to [create a project](/guides/create-project/).
+  </Card>
+  <Card title="Check Results" icon="approve-check">
+    Review your data in the [results section](/guides/check-results/).
+  </Card>
+</CardGrid>

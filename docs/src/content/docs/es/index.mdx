@@ -1,0 +1,36 @@
+---
+title: Bienvenido a XER Docs
+description: Comienza a usar la documentación de XER.
+template: splash
+hero:
+  tagline: La documentación oficial de XER para gestionar tus proyectos.
+  image:
+    html: <img src="https://xer-assets.juanrcifuentes.com/docs/houston.webp" alt="XER Docs" />
+  actions:
+    - text: Crear un Proyecto
+      link: /es/guides/create-project/
+      icon: right-arrow
+    - text: Subir Archivos
+      link: /es/guides/upload-files/
+      icon: right-arrow
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Primeros pasos
+
+<CardGrid stagger>
+	<Card title="Crear un Proyecto" icon="rocket">
+		Aprende a [crear tu primer proyecto](/es/guides/create-project/) en XER.
+	</Card>
+	<Card title="Subir Archivos" icon="document">
+		Descubre cómo [subir archivos](/es/guides/upload-files/) a tu proyecto.
+	</Card>
+	<Card title="Descargar Archivos" icon="down-caret">
+		Aprende a [descargar archivos](/es/guides/download-files/) y reportes generados.
+	</Card>
+	<Card title="Revisar Resultados" icon="approve-check">
+		Consulta cómo [revisar los resultados](/es/guides/check-results/) de tus archivos procesados.
+	</Card>
+</CardGrid>

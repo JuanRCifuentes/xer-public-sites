@@ -1,0 +1,106 @@
+---
+title: Subir Archivos
+description: Aprende a subir archivos a tu proyecto en XER.
+---
+
+import { Card, CardGrid, Steps, Aside, Tabs, TabItem } from '@astrojs/starlight/components';
+
+Esta guía explica cómo subir archivos a un proyecto existente en XER.
+
+## Formatos de archivo compatibles
+
+XER admite los siguientes formatos de archivo para subir:
+
+| Formato  | Extensión | Tamaño Máx. | Descripción                          |
+|----------|-----------|-------------|--------------------------------------|
+| XER      | `.xer`    | 50 MB       | Archivos de exportación de Primavera P6 |
+| XML      | `.xml`    | 50 MB       | Archivos XML de Microsoft Project    |
+| MPP      | `.mpp`    | 50 MB       | Archivos de Microsoft Project        |
+
+{/* TODO: Actualizar formatos compatibles con datos reales del producto */}
+
+<Aside type="caution">
+  Asegúrate de que tus archivos cumplan con los requisitos de tamaño y formato antes de subirlos. Los archivos que excedan el tamaño máximo serán rechazados.
+</Aside>
+
+## Cómo subir archivos
+
+<Steps>
+
+1. **Abre tu proyecto**
+
+   Navega a **Proyectos** y selecciona el proyecto donde deseas subir archivos.
+
+   {/* TODO: Agregar captura de pantalla de la selección de proyecto */}
+
+2. **Ve a la sección de Archivos**
+
+   Dentro de tu proyecto, haz clic en la pestaña **"Archivos"** en la barra de navegación del proyecto.
+
+   {/* TODO: Agregar captura de pantalla de la pestaña Archivos */}
+
+3. **Haz clic en "Subir"**
+
+   Haz clic en el botón **"Subir"** para abrir el diálogo de carga de archivos.
+
+   {/* TODO: Agregar captura de pantalla del botón de subir */}
+
+4. **Selecciona tus archivos**
+
+   <Tabs>
+     <TabItem label="Arrastrar y Soltar">
+       Arrastra y suelta tus archivos directamente en el área de carga.
+
+       {/* TODO: Agregar captura de pantalla del área de arrastrar y soltar */}
+     </TabItem>
+     <TabItem label="Explorar">
+       Haz clic en **"Explorar"** para abrir el selector de archivos y elegir archivos desde tu computadora.
+
+       {/* TODO: Agregar captura de pantalla del selector de archivos */}
+     </TabItem>
+   </Tabs>
+
+5. **Confirma la carga**
+
+   Revisa los archivos seleccionados y haz clic en **"Subir"** para iniciar el proceso de carga. Una barra de progreso mostrará el estado de la carga.
+
+   {/* TODO: Agregar captura de pantalla del progreso de carga */}
+
+6. **Espera el procesamiento**
+
+   Una vez completada la carga, XER procesará los archivos. Esto puede tardar unos momentos dependiendo del tamaño del archivo.
+
+   {/* TODO: Agregar captura de pantalla del estado de procesamiento */}
+
+</Steps>
+
+<Aside type="tip">
+  Puedes subir múltiples archivos a la vez. Cada archivo será procesado individualmente.
+</Aside>
+
+## Solución de problemas
+
+### La carga falla o se queda atascada
+
+- Verifica tu conexión a internet
+- Comprueba que el formato del archivo sea compatible
+- Asegúrate de que el archivo no exceda el tamaño máximo
+- Intenta refrescar la página y subir de nuevo
+
+{/* TODO: Agregar más elementos de solución de problemas basados en problemas comunes */}
+
+### El archivo es rechazado después de la carga
+
+- El archivo puede estar corrupto. Intenta exportarlo nuevamente desde la aplicación de origen
+- Verifica que el archivo no esté protegido con contraseña
+
+## ¿Qué sigue?
+
+<CardGrid>
+  <Card title="Revisar Resultados" icon="approve-check">
+    Después de subir, [revisa tus resultados](/es/guides/check-results/) para ver los datos procesados.
+  </Card>
+  <Card title="Descargar Archivos" icon="down-caret">
+    Aprende a [descargar archivos procesados](/es/guides/download-files/).
+  </Card>
+</CardGrid>

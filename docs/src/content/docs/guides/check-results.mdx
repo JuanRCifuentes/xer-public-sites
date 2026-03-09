@@ -1,0 +1,128 @@
+---
+title: Check Results
+description: Learn how to review and analyze your project results in XER.
+---
+
+import { Card, CardGrid, Steps, Aside, Tabs, TabItem } from '@astrojs/starlight/components';
+
+This guide explains how to review and analyze the results generated after processing your files in XER.
+
+## Results overview
+
+After your files are uploaded and processed, XER generates a set of results that include:
+
+- **Schedule Analysis** — Review of the project schedule with key metrics
+- **Data Quality Check** — Validation of data integrity and completeness
+- **Warnings & Errors** — Issues found during processing
+- **Summary Dashboard** — Visual overview of your project data
+
+{/* TODO: Update with actual result types from the product */}
+
+## How to check results
+
+<Steps>
+
+1. **Open your project**
+
+   Navigate to **Projects** and select the project you want to review.
+
+   {/* TODO: Add screenshot */}
+
+2. **Go to the Results tab**
+
+   Click on the **"Results"** tab in the project navigation bar. If your files are still being processed, you will see a progress indicator.
+
+   {/* TODO: Add screenshot of Results tab */}
+
+3. **Review the summary dashboard**
+
+   The dashboard provides a high-level overview of the results:
+
+   {/* TODO: Add screenshot of the summary dashboard */}
+
+   Key metrics displayed include:
+
+   | Metric               | Description                                       |
+   |----------------------|---------------------------------------------------|
+   | Total Activities     | Number of activities found in the file             |
+   | Critical Path Length | Duration of the critical path                      |
+   | Data Quality Score   | Overall quality rating of the data                 |
+   | Warnings             | Number of warnings found                           |
+   | Errors               | Number of errors that need attention                |
+
+   {/* TODO: Update metrics with actual product data */}
+
+4. **Explore detailed results**
+
+   Click on any section of the dashboard to drill down into detailed results.
+
+   {/* TODO: Add screenshot of detailed view */}
+
+</Steps>
+
+## Understanding result statuses
+
+Each processed file will have one of the following statuses:
+
+<Tabs>
+  <TabItem label="Success">
+    The file was processed without errors. All results are available for review.
+
+    {/* TODO: Add screenshot of success status */}
+  </TabItem>
+  <TabItem label="Warning">
+    The file was processed, but some warnings were found. Review the warnings section for details.
+
+    {/* TODO: Add screenshot of warning status */}
+  </TabItem>
+  <TabItem label="Error">
+    The file could not be fully processed due to errors. Check the errors section for resolution steps.
+
+    {/* TODO: Add screenshot of error status */}
+  </TabItem>
+</Tabs>
+
+## Filtering and sorting results
+
+You can filter and sort results to find specific information:
+
+- **Filter by status** — Show only items with warnings or errors
+- **Filter by date** — Narrow down results to a specific time range
+- **Sort by metric** — Order results by any column header
+- **Search** — Use the search bar to find specific activities or items
+
+{/* TODO: Add screenshot of filter and sort controls */}
+
+<Aside type="tip">
+  Use the **"Export"** button to download your results as a PDF or Excel file for offline review or sharing.
+</Aside>
+
+## Comparing results
+
+If you have uploaded multiple versions of a file, you can compare results:
+
+<Steps>
+
+1. Go to the **"Results"** tab
+2. Click **"Compare"**
+3. Select the two versions you want to compare
+4. Review the differences highlighted in the comparison view
+
+</Steps>
+
+{/* TODO: Add screenshot of comparison view */}
+
+<Aside type="note">
+  The comparison feature is available for projects with two or more uploaded file versions.
+</Aside>
+
+## What's next?
+
+<CardGrid>
+  <Card title="Download Files" icon="down-caret">
+    [Download your results](/guides/download-files/) as reports or data exports.
+  </Card>
+  <Card title="Upload Files" icon="document">
+    Need to upload a new version? See [how to upload files](/guides/upload-files/).
+  </Card>
+</CardGrid>

@@ -1,0 +1,106 @@
+---
+title: Upload Files
+description: Learn how to upload files to your XER project.
+---
+
+import { Card, CardGrid, Steps, Aside, Tabs, TabItem } from '@astrojs/starlight/components';
+
+This guide explains how to upload files to an existing project in XER.
+
+## Supported file formats
+
+XER supports the following file formats for upload:
+
+| Format   | Extension | Max Size  | Description                          |
+|----------|-----------|-----------|--------------------------------------|
+| XER      | `.xer`    | 50 MB     | Primavera P6 export files            |
+| XML      | `.xml`    | 50 MB     | Microsoft Project XML files          |
+| MPP      | `.mpp`    | 50 MB     | Microsoft Project files              |
+
+{/* TODO: Update supported formats with actual product data */}
+
+<Aside type="caution">
+  Make sure your files meet the size and format requirements before uploading. Files that exceed the maximum size will be rejected.
+</Aside>
+
+## How to upload files
+
+<Steps>
+
+1. **Open your project**
+
+   Navigate to **Projects** and select the project where you want to upload files.
+
+   {/* TODO: Add screenshot of the project selection */}
+
+2. **Go to the Files section**
+
+   Inside your project, click on the **"Files"** tab in the project navigation bar.
+
+   {/* TODO: Add screenshot of the Files tab */}
+
+3. **Click "Upload"**
+
+   Click the **"Upload"** button to open the file upload dialog.
+
+   {/* TODO: Add screenshot of the upload button */}
+
+4. **Select your files**
+
+   <Tabs>
+     <TabItem label="Drag & Drop">
+       Drag and drop your files directly into the upload area.
+
+       {/* TODO: Add screenshot of drag and drop area */}
+     </TabItem>
+     <TabItem label="Browse">
+       Click **"Browse"** to open the file picker and select files from your computer.
+
+       {/* TODO: Add screenshot of file picker */}
+     </TabItem>
+   </Tabs>
+
+5. **Confirm the upload**
+
+   Review the selected files and click **"Upload"** to start the upload process. A progress bar will show the upload status.
+
+   {/* TODO: Add screenshot of upload progress */}
+
+6. **Wait for processing**
+
+   Once the upload is complete, XER will process the files. This may take a few moments depending on the file size.
+
+   {/* TODO: Add screenshot of processing status */}
+
+</Steps>
+
+<Aside type="tip">
+  You can upload multiple files at once. Each file will be processed individually.
+</Aside>
+
+## Troubleshooting
+
+### Upload fails or gets stuck
+
+- Check your internet connection
+- Verify the file format is supported
+- Ensure the file does not exceed the maximum size
+- Try refreshing the page and uploading again
+
+{/* TODO: Add more troubleshooting items based on common issues */}
+
+### File is rejected after upload
+
+- The file may be corrupted. Try exporting it again from the source application
+- Check that the file is not password-protected
+
+## What's next?
+
+<CardGrid>
+  <Card title="Check Results" icon="approve-check">
+    After uploading, [check your results](/guides/check-results/) to review the processed data.
+  </Card>
+  <Card title="Download Files" icon="down-caret">
+    Learn how to [download processed files](/guides/download-files/).
+  </Card>
+</CardGrid>
