@@ -2,18 +2,17 @@
 
 ## Overview
 
-Monorepo with three Astro sites deployed to Cloudflare Workers:
+Monorepo with two Astro sites deployed to Cloudflare Workers:
 
 - **landing/** — Minimal landing page
 - **docs/** — Documentation site (Astro Starlight, bilingual EN/ES)
-- **versions/** — Release notes / changelog
 
 ## Tech Stack
 
 - **Framework**: Astro (v5.x)
 - **Package manager**: Bun (`bun.lock`)
 - **Language**: TypeScript (strict config via `astro/tsconfigs/strict`)
-- **Styling**: SCSS (versions), CSS (landing, docs)
+- **Styling**: CSS (landing, docs)
 - **Content**: Astro Content Collections with Markdown/MDX
 - **Deployment**: Cloudflare Workers via Wrangler (static assets in `./dist`)
 
@@ -39,7 +38,7 @@ bun preview   # Preview production build
 ### Content
 
 - **Docs**: MDX files in `docs/src/content/docs/`. English at root, Spanish under `es/`.
-- **Releases**: Markdown files in `versions/src/content/releases/`. File names use underscores for version numbers (e.g., `2_0.md`). Schema requires: title, description, versionNumber, image, date.
+- **Releases**: MDX files in `docs/src/content/docs/versions/`. File names use underscores for version numbers (e.g., `2_0.mdx`).
 
 ### Assets
 
@@ -66,5 +65,5 @@ Each site follows standard Astro layout:
 ## Important Notes
 
 - No test framework is configured.
-- All three sites are statically generated.
+- Both sites are statically generated.
 - The workspace root `package.json` defines workspaces but has no scripts — run commands inside each project directory.

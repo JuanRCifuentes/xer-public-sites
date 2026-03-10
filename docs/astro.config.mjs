@@ -24,12 +24,12 @@ export default defineConfig({
 				{
 					label: 'Guides',
 					translations: { 'es-ES': 'Guías' },
-					items: [
-						{ label: 'Create a Project', slug: 'guides/create-project', translations: { 'es-ES': 'Crear un Proyecto' } },
-						{ label: 'Upload Files', slug: 'guides/upload-files', translations: { 'es-ES': 'Subir Archivos' } },
-						{ label: 'Download Files', slug: 'guides/download-files', translations: { 'es-ES': 'Descargar Archivos' } },
-						{ label: 'Check Results', slug: 'guides/check-results', translations: { 'es-ES': 'Revisar Resultados' } },
-					],
+					autogenerate: { directory: 'guides' },
+				},
+				{
+					label: 'Versions',
+					translations: { 'es-ES': 'Versiones' },
+					autogenerate: { directory: 'versions' },
 				},
 			],
 		}),
