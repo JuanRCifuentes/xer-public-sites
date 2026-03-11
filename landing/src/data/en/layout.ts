@@ -7,10 +7,8 @@ export const header = {
     alt: "Your Company",
   },
   navLinks: [
-    { text: "Product", href: "#" },
-    { text: "Features", href: "#" },
-    { text: "Blog", href: "/en/blog" },
-    { text: "Company", href: "#" },
+{ text: "Blog", href: "/en/blog" },
+    { text: "Documentation", href: "https://xer-docs.juan-r-cifuentes.workers.dev" },
   ],
   loginLink: { text: "Log in", href: "https://nice-tree-04f32b410-qa.centralus.2.azurestaticapps.net/app/" },
 };
