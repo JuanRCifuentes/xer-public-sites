@@ -9,8 +9,8 @@ Monorepo with two Astro sites deployed to Cloudflare Workers:
 
 ## Tech Stack
 
-- **Framework**: Astro (v5.x)
-- **Package manager**: Bun (`bun.lock`)
+- **Framework**: Astro (v5.x for docs, v6.x for landing)
+- **Package manager**: Bun (each project has its own `bun.lock`)
 - **Language**: TypeScript (strict config via `astro/tsconfigs/strict`)
 - **Styling**: Tailwind CSS v4 (landing), CSS (docs)
 - **Content**: Astro Content Collections with Markdown/MDX
@@ -66,4 +66,5 @@ Each site follows standard Astro layout:
 
 - No test framework is configured.
 - Both sites are statically generated.
-- The workspace root `package.json` defines workspaces but has no scripts — run commands inside each project directory.
+- There is no root `package.json` or workspace config — each project is fully independent with its own `bun.lock` and `node_modules`. Run `bun install` inside each project directory.
+- **TODO**: Check if Starlight becomes compatible with Astro 6. Once it is, upgrade docs to Astro 6 and consolidate back to a single root `package.json` with workspaces and one `bun.lock`.
