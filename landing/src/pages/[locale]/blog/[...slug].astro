@@ -1,0 +1,55 @@
+---
+import { getCollection, render } from "astro:content";
+import { locales } from "../../../utils/i18n";
+import type { Locale } from "../../../utils/i18n";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+	const posts = await getCollection("blog");
+	return posts.map((post) => ({
+		params: {
+			locale: post.data.locale,
+			slug: post.id.replace(`${post.data.locale}/`, ""),
+		},
+		props: { post },
+	}));
+}
+
+const { post } = Astro.props;
+const locale = post.data.locale as Locale;
+const { Content } = await render(post);
+
+const { blogLabels: labels } = await import(`../../../data/${locale}/blog.ts`);
+---
+
+<BaseLayout title={post.data.title} locale={locale}>
+	<div class="bg-white px-6 py-32 lg:px-8 dark:bg-gray-900">
+		<article class="mx-auto max-w-3xl text-base/7 text-gray-700 dark:text-gray-300">
+			<div class="mb-10">
+				<a href={`/${locale}/blog`} class="text-sm font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300">
+					&larr; {labels.back}
+				</a>
+			</div>
+			<p class="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">{post.data.author}</p>
+			<h1 class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">{post.data.title}</h1>
+			<p class="mt-6 text-xl/8">{post.data.description}</p>
+			<div class="mt-4 flex items-center gap-x-2 text-sm/6 text-gray-500 dark:text-gray-400">
+				<time datetime={post.data.pubDate.toISOString()}>
+					{post.data.pubDate.toLocaleDateString(locale, { year: "numeric", month: "long", day: "numeric" })}
+				</time>
+			</div>
+			{post.data.image && (
+				<figure class="mt-16">
+					<img
+						src={post.data.image}
+						alt=""
+						class="aspect-video rounded-xl bg-gray-50 object-cover dark:bg-gray-800"
+					/>
+				</figure>
+			)}
+			<div class="mt-10 max-w-2xl prose prose-gray dark:prose-invert prose-headings:mt-16 prose-headings:text-3xl prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-pretty prose-headings:text-gray-900 dark:prose-headings:text-white prose-p:text-gray-600 dark:prose-p:text-gray-400 prose-a:text-indigo-600 dark:prose-a:text-indigo-400 prose-strong:text-gray-900 dark:prose-strong:text-white prose-blockquote:border-indigo-600 dark:prose-blockquote:border-indigo-400 prose-blockquote:font-semibold prose-blockquote:text-gray-900 dark:prose-blockquote:text-white prose-li:text-gray-600 dark:prose-li:text-gray-400">
+				<Content />
+			</div>
+		</article>
+	</div>
+</BaseLayout>

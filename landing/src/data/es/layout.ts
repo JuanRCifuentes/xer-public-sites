@@ -9,7 +9,7 @@ export const header = {
   navLinks: [
     { text: "Producto", href: "#" },
     { text: "Características", href: "#" },
-    { text: "Marketplace", href: "#" },
+    { text: "Blog", href: "/es/blog" },
     { text: "Empresa", href: "#" },
   ],
   loginLink: { text: "Iniciar sesión", href: "#" },

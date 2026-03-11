@@ -1,0 +1,52 @@
+---
+import { getCollection } from "astro:content";
+import { locales } from "../../../utils/i18n";
+import type { Locale } from "../../../utils/i18n";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+
+export function getStaticPaths() {
+	return locales.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params as { locale: Locale };
+
+const posts = (await getCollection("blog", ({ data }) => data.locale === locale))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const { blogLabels: labels } = await import(`../../../data/${locale}/blog.ts`);
+---
+
+<BaseLayout title={labels.title} locale={locale}>
+	<Header title={labels.title} description={labels.description} />
+	<div class="mx-auto max-w-2xl px-4 pb-24 sm:px-6 lg:max-w-7xl lg:px-8">
+		<div class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-3 lg:gap-x-8">
+			{posts.map((post) => (
+				<article class="group relative flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white dark:border-white/10 dark:bg-white/5">
+					{post.data.image && (
+						<img
+							src={post.data.image}
+							alt=""
+							class="aspect-3/4 w-full bg-gray-200 object-cover transition-opacity duration-300 group-hover:opacity-75 sm:aspect-auto sm:h-96 dark:bg-gray-800"
+						/>
+					)}
+					<div class="flex flex-1 flex-col space-y-2 p-4">
+						<h3 class="text-sm font-medium text-gray-900 dark:text-white">
+							<a href={`/${locale}/blog/${post.id.replace(`${locale}/`, "")}`}>
+								<span aria-hidden="true" class="absolute inset-0" />
+								{post.data.title}
+							</a>
+						</h3>
+						<p class="text-sm text-gray-500 line-clamp-3 dark:text-gray-400">{post.data.description}</p>
+						<div class="flex flex-1 flex-col justify-end">
+							<p class="text-sm text-gray-500 italic dark:text-gray-400">{post.data.author}</p>
+							<time datetime={post.data.pubDate.toISOString()} class="text-sm font-medium text-gray-900 dark:text-white">
+								{post.data.pubDate.toLocaleDateString(locale, { year: "numeric", month: "long", day: "numeric" })}
+							</time>
+						</div>
+					</div>
+				</article>
+			))}
+		</div>
+	</div>
+</BaseLayout>
