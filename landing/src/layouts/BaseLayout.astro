@@ -65,7 +65,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 		<slot name="head" />
 		<script src="@tailwindplus/elements"></script>
 	</head>
-	<body>
+	<body class="bg-white dark:bg-gray-900">
 		<div class="bg-white dark:bg-gray-900">
 			<Navigation {...header} locale={locale} />
 			<main>
