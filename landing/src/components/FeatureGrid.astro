@@ -1,0 +1,49 @@
+---
+import Icon from "./Icon.astro";
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  description: string;
+  screenshot: { light: string; dark: string; alt: string };
+  features: Array<{
+    icon: string;
+    title: string;
+    description: string;
+  }>;
+}
+
+const { eyebrow, title, description, screenshot, features } = Astro.props;
+---
+
+<div class="mt-32 sm:mt-56">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl sm:text-center">
+      <h2 class="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">{eyebrow}</h2>
+      <p class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl sm:text-balance dark:text-white">{title}</p>
+      <p class="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">{description}</p>
+    </div>
+  </div>
+  <div class="relative overflow-hidden pt-16">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <img width="2432" height="1442" src={screenshot.light} alt={screenshot.alt} class="mb-[-12%] rounded-xl shadow-2xl ring-1 ring-gray-900/10 dark:hidden dark:ring-white/10" />
+      <img width="2432" height="1442" src={screenshot.dark} alt={screenshot.alt} class="mb-[-12%] rounded-xl shadow-2xl ring-1 ring-gray-900/10 not-dark:hidden dark:ring-white/10" />
+      <div aria-hidden="true" class="relative">
+        <div class="absolute -inset-x-20 bottom-0 bg-linear-to-t from-white pt-[7%] dark:from-gray-900"></div>
+      </div>
+    </div>
+  </div>
+  <div class="mx-auto mt-16 max-w-7xl px-6 sm:mt-20 md:mt-24 lg:px-8">
+    <dl class="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-10 text-base/7 text-gray-600 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16 dark:text-gray-400">
+      {features.map((feature) => (
+        <div class="relative pl-9">
+          <dt class="inline font-semibold text-gray-900 dark:text-white">
+            <Icon name={feature.icon} class="absolute top-1 left-1 size-5 text-indigo-600 dark:text-indigo-400" />
+            {feature.title}
+          </dt>
+          <dd class="inline">{feature.description}</dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</div>
