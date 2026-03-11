@@ -19,7 +19,23 @@ const { hero, logoCloud, featureCards, featureGrid, stats, cta } =
 	await import(`../../data/${locale}/home.ts`);
 ---
 
-<BaseLayout title="Astro" locale={locale}>
+<BaseLayout title={hero.title} description={hero.description} locale={locale}>
+	<script slot="head" type="application/ld+json" set:html={JSON.stringify([
+		{
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "Xer",
+			"url": Astro.site?.href,
+			"logo": "https://xer-assets.juanrcifuentes.com/favicon.svg",
+		},
+		{
+			"@context": "https://schema.org",
+			"@type": "BreadcrumbList",
+			"itemListElement": [
+				{ "@type": "ListItem", "position": 1, "name": "Home" },
+			],
+		},
+	])} />
 	<HeroSection {...hero} />
 	<LogoCloud {...logoCloud} />
 	<FeatureCards {...featureCards} />

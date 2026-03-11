@@ -20,9 +20,33 @@ const locale = post.data.locale as Locale;
 const { Content } = await render(post);
 
 const { blogLabels: labels } = await import(`../../../data/${locale}/blog.ts`);
+const slug = post.id.replace(`${locale}/`, "");
 ---
 
-<BaseLayout title={post.data.title} locale={locale}>
+<BaseLayout title={post.data.title} description={post.data.description} image={post.data.image} locale={locale} type="article" publishedTime={post.data.pubDate.toISOString()} author={post.data.author}>
+	<script slot="head" type="application/ld+json" set:html={JSON.stringify([
+		{
+			"@context": "https://schema.org",
+			"@type": "Article",
+			"headline": post.data.title,
+			"description": post.data.description,
+			"author": { "@type": "Person", "name": post.data.author },
+			"datePublished": post.data.pubDate.toISOString(),
+			...(post.data.updatedDate && { "dateModified": post.data.updatedDate.toISOString() }),
+			...(post.data.image && { "image": post.data.image }),
+			"inLanguage": locale,
+			"mainEntityOfPage": new URL(`/${locale}/blog/${slug}`, Astro.site).href,
+		},
+		{
+			"@context": "https://schema.org",
+			"@type": "BreadcrumbList",
+			"itemListElement": [
+				{ "@type": "ListItem", "position": 1, "name": "Home", "item": new URL(`/${locale}/`, Astro.site).href },
+				{ "@type": "ListItem", "position": 2, "name": "Blog", "item": new URL(`/${locale}/blog`, Astro.site).href },
+				{ "@type": "ListItem", "position": 3, "name": post.data.title },
+			],
+		},
+	])} />
 	<div class="bg-white px-6 py-32 lg:px-8 dark:bg-gray-900">
 		<article class="mx-auto max-w-3xl text-base/7 text-gray-700 dark:text-gray-300">
 			<div class="mb-10">
