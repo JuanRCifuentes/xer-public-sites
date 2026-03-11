@@ -7,7 +7,8 @@ export const header = {
     alt: "Tu Empresa",
   },
   navLinks: [
-{ text: "Blog", href: "/es/blog" },
+    { text: "Precios", href: "/es/pricing" },
+    { text: "Blog", href: "/es/blog" },
     { text: "Documentación", href: "https://xer-docs.juan-r-cifuentes.workers.dev" },
   ],
   loginLink: { text: "Iniciar sesión", href: "https://nice-tree-04f32b410-qa.centralus.2.azurestaticapps.net/app/" },
