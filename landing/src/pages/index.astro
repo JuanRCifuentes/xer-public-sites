@@ -1,5 +1,12 @@
 ---
 import "../styles.css";
+import { hero, logoCloud, featureCards, featureGrid, stats, cta } from "../data/home";
+import HeroSection from "../components/HeroSection.astro";
+import LogoCloud from "../components/LogoCloud.astro";
+import FeatureCards from "../components/FeatureCards.astro";
+import FeatureGrid from "../components/FeatureGrid.astro";
+import StatsSection from "../components/StatsSection.astro";
+import CtaSection from "../components/CtaSection.astro";
 ---
 
 <html lang="en">
@@ -11,8 +18,15 @@ import "../styles.css";
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1 class="text-3xl font-bold underline">
-			Hello Astro!
-		</h1>
+		<div class="bg-white dark:bg-gray-900">
+			<main>
+				<HeroSection {...hero} />
+				<LogoCloud {...logoCloud} />
+				<FeatureCards {...featureCards} />
+				<FeatureGrid {...featureGrid} />
+				<StatsSection {...stats} />
+				<CtaSection {...cta} />
+			</main>
+		</div>
 	</body>
 </html>
