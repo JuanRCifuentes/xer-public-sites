@@ -12,7 +12,7 @@ Monorepo with two Astro sites deployed to Cloudflare Workers:
 - **Framework**: Astro (v5.x)
 - **Package manager**: Bun (`bun.lock`)
 - **Language**: TypeScript (strict config via `astro/tsconfigs/strict`)
-- **Styling**: CSS (landing, docs)
+- **Styling**: Tailwind CSS v4 (landing), CSS (docs)
 - **Content**: Astro Content Collections with Markdown/MDX
 - **Deployment**: Cloudflare Workers via Wrangler (static assets in `./dist`)
 
