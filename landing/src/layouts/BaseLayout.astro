@@ -1,27 +1,33 @@
 ---
 import "../styles.css";
-import { header, footer } from "../data/layout";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import type { Locale } from "../utils/i18n";
 
 interface Props {
   title: string;
+  locale: Locale;
 }
 
-const { title } = Astro.props;
+const { title, locale } = Astro.props;
+
+const { header, footer } = locale === "es"
+  ? await import("../data/es/layout")
+  : await import("../data/en/layout");
 ---
 
-<html lang="en">
+<html lang={locale}>
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="https://xer-assets.juanrcifuentes.com/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<script src="@tailwindplus/elements"></script>
 	</head>
 	<body>
 		<div class="bg-white dark:bg-gray-900">
-			<Header {...header} />
+			<Header {...header} locale={locale} />
 			<main>
 				<slot />
 			</main>

@@ -1,0 +1,29 @@
+---
+import { locales } from "../../utils/i18n";
+import type { Locale } from "../../utils/i18n";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import HeroSection from "../../components/HeroSection.astro";
+import LogoCloud from "../../components/LogoCloud.astro";
+import FeatureCards from "../../components/FeatureCards.astro";
+import FeatureGrid from "../../components/FeatureGrid.astro";
+import StatsSection from "../../components/StatsSection.astro";
+import CtaSection from "../../components/CtaSection.astro";
+
+export function getStaticPaths() {
+	return locales.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params as { locale: Locale };
+
+const { hero, logoCloud, featureCards, featureGrid, stats, cta } =
+	await import(`../../data/${locale}/home.ts`);
+---
+
+<BaseLayout title="Astro" locale={locale}>
+	<HeroSection {...hero} />
+	<LogoCloud {...logoCloud} />
+	<FeatureCards {...featureCards} />
+	<FeatureGrid {...featureGrid} />
+	<StatsSection {...stats} />
+	<CtaSection {...cta} />
+</BaseLayout>
