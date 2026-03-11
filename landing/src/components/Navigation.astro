@@ -10,6 +10,7 @@ interface Props {
 }
 
 const { logo, navLinks, loginLink, locale } = Astro.props;
+const currentPath = Astro.url.pathname.replace(`/${locale}`, "") || "/";
 ---
 
 <header class="sticky top-0 z-50 bg-white/75 shadow-[0_1px_3px_0_rgba(0,0,0,0.05)] ring-1 ring-gray-900/5 backdrop-blur-md dark:bg-gray-900/75 dark:shadow-none dark:ring-white/10">
@@ -47,12 +48,12 @@ const { logo, navLinks, loginLink, locale } = Astro.props;
         <el-popover id="lang-menu" anchor="bottom" popover class="w-screen max-w-min overflow-visible bg-transparent px-4 transition transition-discrete [--anchor-gap:--spacing(5)] backdrop:bg-transparent open:flex data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in">
           <div class="w-40 shrink rounded-xl bg-white p-4 text-sm/6 font-semibold text-gray-900 shadow-lg outline-1 outline-gray-900/5 dark:bg-gray-800 dark:text-white dark:shadow-none dark:outline dark:-outline-offset-1 dark:outline-white/10">
             {locales.map((loc) => (
-              <a href={getLocalePath(loc, "/")} class:list={["block rounded-md p-2 hover:text-indigo-600 dark:hover:text-indigo-400", loc === locale && "text-indigo-600 dark:text-indigo-400"]}>{localeNames[loc]}</a>
+              <a href={getLocalePath(loc, currentPath)} class:list={["block rounded-md p-2 hover:text-indigo-600 dark:hover:text-indigo-400", loc === locale && "text-indigo-600 dark:text-indigo-400"]}>{localeNames[loc]}</a>
             ))}
           </div>
         </el-popover>
       </div>
-      <a href={loginLink.href} class="text-sm/6 font-semibold text-gray-900 dark:text-white">{loginLink.text} <span aria-hidden="true">&rarr;</span></a>
+      <a href={loginLink.href} target="_blank" rel="noopener noreferrer" class="text-sm/6 font-semibold text-gray-900 dark:text-white">{loginLink.text} <span aria-hidden="true">&rarr;</span></a>
     </div>
   </nav>
   <el-dialog>
@@ -81,11 +82,11 @@ const { logo, navLinks, loginLink, locale } = Astro.props;
               </div>
               <div class="space-y-2 py-6">
                 {locales.map((loc) => (
-                  <a href={getLocalePath(loc, "/")} class:list={["-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5", loc === locale && "text-indigo-600 dark:text-indigo-400"]}>{localeNames[loc]}</a>
+                  <a href={getLocalePath(loc, currentPath)} class:list={["-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5", loc === locale && "text-indigo-600 dark:text-indigo-400"]}>{localeNames[loc]}</a>
                 ))}
               </div>
               <div class="py-6">
-                <a href={loginLink.href} class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">{loginLink.text}</a>
+                <a href={loginLink.href} target="_blank" rel="noopener noreferrer" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">{loginLink.text}</a>
               </div>
             </div>
           </div>

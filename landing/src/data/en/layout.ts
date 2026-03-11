@@ -12,7 +12,7 @@ export const header = {
     { text: "Blog", href: "/en/blog" },
     { text: "Company", href: "#" },
   ],
-  loginLink: { text: "Log in", href: "#" },
+  loginLink: { text: "Log in", href: "https://nice-tree-04f32b410-qa.centralus.2.azurestaticapps.net/app/" },
 };
 
 // --- Footer ---
