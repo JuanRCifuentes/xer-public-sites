@@ -1,6 +1,6 @@
 ---
-import "../styles.css";
 import { hero, logoCloud, featureCards, featureGrid, stats, cta } from "../data/home";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import HeroSection from "../components/HeroSection.astro";
 import LogoCloud from "../components/LogoCloud.astro";
 import FeatureCards from "../components/FeatureCards.astro";
@@ -9,24 +9,11 @@ import StatsSection from "../components/StatsSection.astro";
 import CtaSection from "../components/CtaSection.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="https://xer-assets.juanrcifuentes.com/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<div class="bg-white dark:bg-gray-900">
-			<main>
-				<HeroSection {...hero} />
-				<LogoCloud {...logoCloud} />
-				<FeatureCards {...featureCards} />
-				<FeatureGrid {...featureGrid} />
-				<StatsSection {...stats} />
-				<CtaSection {...cta} />
-			</main>
-		</div>
-	</body>
-</html>
+<BaseLayout title="Astro">
+	<HeroSection {...hero} />
+	<LogoCloud {...logoCloud} />
+	<FeatureCards {...featureCards} />
+	<FeatureGrid {...featureGrid} />
+	<StatsSection {...stats} />
+	<CtaSection {...cta} />
+</BaseLayout>
